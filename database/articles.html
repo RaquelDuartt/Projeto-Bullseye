@@ -1,0 +1,34 @@
+    <script src="https://www.gstatic.com/firebasejs/9.3.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.3.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.3.0/firebase-auth-compat.js"></script>
+     <script src="fb.js"></script>
+
+     <script> 
+    db.collection("articles").add({
+        
+	date : '2021-11-06 21:04:00',
+	title : 'Primeiro Artigo',
+	image : 'https://picsum.photos/200/300'
+	resume : 'Este é o primeiro artigo do nosso aplicativo',
+	text : '<h2>Título do Artigo</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui dignissimos corporis modi necessitatibus at, dicta tenetur inventore perferendis aliquam incidunt voluptatum, ipsum assumenda distinctio nulla odit debitis autem magnam eaque?</p><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi temporibus sint magnam doloremque fugiat minus expedita reprehenderit consequatur ad voluptatem, dignissimos voluptate voluptatibus blanditiis placeat, nobis veritatis aperiam totam laboriosam.</p><p><img src="https://picsum.photos/400/300" alt="Imagem aleatória"></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, dolor libero? Corporis placeat nesciunt in dolorem nisi, omnis ullam dolore reprehenderit eveniet aut aliquid officiis deserunt enim unde! Commodi, libero?</p><ul>    <li><a href="https://github.com/luferat" target="_blank">GitHub do Fessô</a></li>    <li><a href="http://www.catabits.com.br" target="_blank">Site do Fessô</a></li></ul><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure dicta facere assumenda veritatis esse quisquam corrupti praesentium facilis repellendus minima ducimus, deleniti dolores nemo consequatur expedita quas, laudantium numquam deserunt.</p>',
+	author : 'Joca da Silva',
+	status : 'ativo'
+    })
+    .then((docRef) => {
+    console.log("documento criado com o ID:", docRef.id);
+    })
+    .catch((error) => {
+    console.error("Opps! Deu Erro: ", error);
+    });
+    </script>
+
+<h2>Título do Artigo</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui dignissimos corporis modi necessitatibus at, dicta tenetur inventore perferendis aliquam incidunt voluptatum, ipsum assumenda distinctio nulla odit debitis autem magnam eaque?</p>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi temporibus sint magnam doloremque fugiat minus expedita reprehenderit consequatur ad voluptatem, dignissimos voluptate voluptatibus blanditiis placeat, nobis veritatis aperiam totam laboriosam.</p>
+<p><img src="https://picsum.photos/400/300" alt="Imagem aleatória"></p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, dolor libero? Corporis placeat nesciunt in dolorem nisi, omnis ullam dolore reprehenderit eveniet aut aliquid officiis deserunt enim unde! Commodi, libero?</p>
+<ul>
+    <li><a href="https://github.com/luferat" target="_blank">GitHub do Fessô</a></li>
+    <li><a href="http://www.catabits.com.br" target="_blank">Site do Fessô</a></li>
+</ul>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure dicta facere assumenda veritatis esse quisquam corrupti praesentium facilis repellendus minima ducimus, deleniti dolores nemo consequatur expedita quas, laudantium numquam deserunt.</p>

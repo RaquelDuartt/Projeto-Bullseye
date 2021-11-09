@@ -5,7 +5,7 @@
 /* Predefinições do layout */
 
 :root {
-  --background-color: purple;
+  --background-color:purple;
   --background-image: url("assets/background_1080_720_purple.jpg");
   --font-family: sans-serif; /* Windows: arial, helvetica, tahoma, verdana */
   --min-width: 280px;
