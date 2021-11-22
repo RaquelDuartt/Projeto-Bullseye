@@ -1,67 +1,35 @@
-/* Inicializa jQuery */
-$(document).ready(runApp);
-
-/* Aplicativo principal - Tratamento de eventos */
-function runApp() {
-
-    // Monitora cliques nas tags <a> do documento
-    $('a').click(routerLink);
-
-}
-
-// Processa cliques nas tags <a> do documento
-function routerLink() {
-
-    // Obtém atributo 'href' do link clicado
-    var href = $(this).attr('href');
-
-    // Obtém atributo 'target' do link clicado
-    var target = $(this).attr('target');
-
-    // Se 'href' está vazio ou não existe (undefined), não faz nada
-    if (!href || href === '') return false;
-
-    // Trata os tipos de link
-    if (
-        href.substr(0, 7) === 'http://' ||  // Se é um link externo 'http' ou
-        href.substr(0, 8) === 'https://' || // Se é um link externo 'https' ou
-        target === '_blank' ||              // Se o 'target' é '_blank' ou
-        href.substr(0, 1) === '#'           // Se é uma âncora
-    ) return true;                          // Retorna o controla para o HTML
-
-    // Se é uma rota, chama a função 'loadPage', passando a rota
-    loadPage(href);
-
-    // Conclui sem fazer nada
-    return false;
-}
+/**
+ * global.js
+ * 
+ * Created by André Luferat → http://www.luferat.net/
+ * The MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * 
+ * Aplicativo principal.
+ */
 
 /* Inicializa jQuery */
 $(document).ready(runApp);
 
-/* setup inicial do aplicativo */
-
+// Setup inicial do aplicativo
 var app = {
     name: 'Bullseye',                       // Nome do site
-    slogan: 'No alvo da sua carreira!',    // Slogan do site
-    sep: '~'                              // Separador do título
+    slogan: 'No alvo da sua carreira!',     // Slogan do site
+    sep: '~'                                // Separador do título
 }
 
-/* Aplicativo principal - Tratamento de eventos */
+// Aplicativo principal - Tratamento de eventos
 function runApp() {
+
+    // Página inicial
+    loadPage('home');
 
     // Monitora cliques nas tags <a> do documento
     $('a').click(routerLink);
-
-    // Título da página
-    setTitle();
 
 }
 
 // Processa cliques nas tags <a> do documento
 function routerLink() {
-
-    console.log('clicou');
 
     // Obtém atributo 'href' do link clicado
     var href = $(this).attr('href');
@@ -132,7 +100,7 @@ function setTitle(pageTitle = '') {
     // Se definiu o título, usa o formato abaixo
     else title = `${app.name} ${app.sep} ${pageTitle}`;
 
-    // Reescreve  a tag <title>
+    // Reescreve a tag <title>
     $('title').text(title);
 
 }
