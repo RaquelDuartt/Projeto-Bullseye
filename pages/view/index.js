@@ -1,17 +1,17 @@
 /**
- * license/index.js
+ * view/index.js
  * 
  * Created by André Luferat → http://www.luferat.net/
  * The MIT License (http://www.opensource.org/licenses/mit-license.php)
  * 
- * Controller da página 'license'.
+ * Controller da página 'view'.
  */
 
-$(document).ready(runLicense);
+$(document).ready(runView);
 
-function runLicense() {
+function runView() {
 
     // Título da página
-    setTitle('Licença');
+    setTitle('Artigo completo');
 
 }

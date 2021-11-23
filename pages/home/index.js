@@ -9,9 +9,6 @@
 
  $(document).ready(runHome);
 
- // Variável com view dos artigos
- var articles = '';
- 
  function runHome() {
  
      // Título da página
@@ -21,8 +18,14 @@
      $(document).on('click', '.art-block', viewArticle);
  
      // Lê todos os artigos do banco de dados e armazena na variável 'querySnapshot'
-     db.collection('articles')
+     db.collection('articles') // Nome da coleção
+         .where('status', '==', 'ativo') // somente com status ativo
+         .where('date', '<=', getSystemDate()) // Somente data atual e no passado (agendamento)
+         .orderBy('date', 'desc') // Ordenado pela data mais recente
          .onSnapshot((querySnapshot) => {
+ 
+             // Variável com view dos artigos
+             var articles = '';
  
              // Obtém cada artigo contido em 'querySnapshot' e armazena na variável 'doc'
              querySnapshot.forEach((doc) => {
@@ -63,12 +66,3 @@
  
  }
  
- // Limpa caracteres perigosos das strings
- function sanitizeString(badString, stripHTML = true) {
- 
-     // Remove espaços em excesso da string
-     goodString = badString.trim();
- 
-     // Retorna a string sanitizada
-     return goodString;
- }
