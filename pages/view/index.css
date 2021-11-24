@@ -6,3 +6,10 @@
  * 
  * Folhas de estilo da página 'view'
  */
+
+ .author-date {
+    display: block;
+    text-align: right;
+    padding-top: 0.2rem;
+    margin-bottom: 1rem;
+}

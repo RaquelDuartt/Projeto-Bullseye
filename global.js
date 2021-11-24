@@ -123,5 +123,11 @@ function getSystemDate() {
     returnDate = yourDate.toISOString().split("T"); // Separa data da hora
     returnTime = returnDate[1].split("."); // Separa partes da data
     return `${returnDate[0]} ${returnTime[0]}`; // Formata data como system date
-  }
+}
 
+// Formata uma 'system date' (YYYY-MM-DD HH:II:SS) para 'Br date' (DD/MM/YYYY HH:II:SS)
+function getBrDate(dateString, separator = ' às ') {
+    var p1 = dateString.split(" "); // Separa data e hora
+    var p2 = p1[0].split("-"); // Separa partes da data
+    return `${p2[2]}/${p2[1]}/${p2[0]}${separator}${p1[1]}`; // Remonta partes da data e hora
+}
